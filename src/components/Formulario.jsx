@@ -7,6 +7,12 @@ const Formulario = () => {
   const [fecha, setFecha] = useState('');
   const [sintomas, setSintomas] = useState('');
 
+  const handLeSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('Enviar Formulario')
+  }
+
   return (
     <div className="md:w-1/2 lg:w-2/5 ">
 
@@ -19,8 +25,11 @@ const Formulario = () => {
         <span className="text-indigo-600 font-bold">Administralos</span>
       </p>
       
-        <form className="bg-white shadow-md rounded-lg py-10 px-5 mx-5 mb-10">
-
+        <form 
+          onSubmit={handLeSubmit}
+          className="bg-white shadow-md rounded-lg py-10 px-5 mx-5 mb-10"
+        >
+ 
           <div className="mb-5">
             <label htmlFor="mascota" className="block text-gray-700 uppercase font-bold">
               Nombre Mascota
